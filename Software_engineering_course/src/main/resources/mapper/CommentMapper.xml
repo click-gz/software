@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="software.xmclass.Software_engineering._course.mapper.CommentMapper">
+    <!--获取未审核的评论-->
+    <select id="GetUComment" resultType="CommentModel">
+        select  * from Comment where CommentState = #{state}
+    </select>
+
+    <update id="CheckComment" parameterType="int" >
+        update Comment set CommentState=#{state} where CommentID=#{id};
+    </update>
+
+
+
+
+</mapper>

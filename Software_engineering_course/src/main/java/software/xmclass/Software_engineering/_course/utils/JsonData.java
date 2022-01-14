@@ -29,7 +29,7 @@ public class JsonData {
      * 成功，不用返回数据
      */
     public static JsonData buildSuccess() {
-        return new JsonData(0, null, null);
+        return new JsonData(200, null, null);
     }
 
     /**
