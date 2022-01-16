@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="software.xmclass.Software_engineering._course.mapper.OrderMapper">
+    <!--保存订单-->
+    <insert id="save" useGeneratedKeys="true" keyColumn="OrderID" keyProperty="OrderID">
+        INSERT INTO `order` (`PracticalUserID`, `OrdinaryUserID`, `OrderTime`, `Price`, `PayState`,
+         `OrderState`, `OTime`)
+        VALUES
+        (#{PracticalUserID,jdbcType=INTEGER},#{OrdinaryUserID,jdbcType=INTEGER},#{OrderTime,jdbcType=TIMESTAMP},#{Price,jdbcType=FLOAT},
+        #{PayState,jdbcType=INTEGER},#{OrderState,jdbcType=INTEGER},#{OTime});
+
+    </insert>
+
+    <!--根据用户id获取订单信息-->
+    <select id="OgetbyId" resultType="OgetOrder">
+        select OrderID, PracticalUserID, OTime, OrderState from `order` where OrdinaryUserID = #{id}
+    </select>
+
+
+
+</mapper>

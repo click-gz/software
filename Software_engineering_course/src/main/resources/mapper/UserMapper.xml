@@ -18,5 +18,10 @@
         select  * from usermodel where Phone = #{phone} and Pwd = #{pwd}
     </select>
 
+    <!--根据手机号和密码查询用户信息-->
+    <select id="findById" resultType="usermodel">
+        select  * from usermodel where Uid = #{Uid}
+    </select>
+
 
 </mapper>

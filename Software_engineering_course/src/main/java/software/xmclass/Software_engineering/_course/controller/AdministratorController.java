@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping("/api/v1/pri/administrator")
 public class AdministratorController {
     @Autowired
-    AdministratorService adminservice;
+    private AdministratorService adminservice;
 
     //获取未审核的评论
     @PostMapping("GetComment")

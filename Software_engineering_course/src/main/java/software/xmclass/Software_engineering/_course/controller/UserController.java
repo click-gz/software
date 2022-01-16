@@ -27,8 +27,11 @@ public class UserController {
         if (res == -1) {
             return JsonData.buildError(403, "lose Information");
         }
-        if (res == -2) {
+        else if (res == -2) {
             return JsonData.buildError(403, "exist Phone");
+        }
+        else if(res == 0){
+            return JsonData.buildError(500, "error Mybatis");
         }
         return JsonData.buildSuccess(200,123);
     }

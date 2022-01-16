@@ -9,6 +9,7 @@ public interface UserMapper {
     int save(usermodel user);
     usermodel findByPhoneAndPwd(@Param("phone") String phone, @Param("pwd") String pwd);
     usermodel findByPhone(@Param("phone") String phone);
+    usermodel findById(@Param("Uid") int id);
 
 
 }

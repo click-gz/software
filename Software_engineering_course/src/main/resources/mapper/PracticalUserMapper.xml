@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="software.xmclass.Software_engineering._course.mapper.PracticalUserMapper">
+    <!--根据ID查询用户信息-->
+    <select id="findByID" resultType="PracticalUserModel">
+        select  * from practicaluser where PracticalUserID = #{PracticalUserID}
+    </select>
+    <select id="getName" resultType="String">
+        select  UserName from practicaluser where PracticalUserID = #{PracticalUserID}
+    </select>
+
+
+
+</mapper>
