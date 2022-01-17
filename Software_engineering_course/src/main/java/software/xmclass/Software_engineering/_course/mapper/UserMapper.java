@@ -12,4 +12,5 @@ public interface UserMapper {
     usermodel findById(@Param("Uid") int id);
 
 
+    String getName(@Param("Uid") int ordinaryUserID);
 }

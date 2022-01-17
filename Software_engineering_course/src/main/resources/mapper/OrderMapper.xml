@@ -13,10 +13,27 @@
     </insert>
 
     <!--根据用户id获取订单信息-->
-    <select id="OgetbyId" resultType="OgetOrder">
-        select OrderID, PracticalUserID, OTime, OrderState from `order` where OrdinaryUserID = #{id}
+    <select id="OList" resultType="OgetOrder">
+        select OrderID, PracticalUserID, OTime, OrderState, PayState from `order` where OrdinaryUserID = #{id}
+    </select>
+    <!--根据用户id获取订单信息-->
+    <select id="PList" resultType="PgetOrder">
+        select OrderID, OrdinaryUserID, OTime, OrderState, PayState from `order` where PracticalUserID = #{id}
     </select>
 
+    <!--根据订单号获取具体信息-->
+    <select id="getOrder" resultType="OrderModel">
+        select * from `order` where OrderID = #{id}
+    </select>
 
+    <!--修改订单-->
+    <update id="changeOrderState" >
+        update `order` set OrderState = #{State} where OrderID=#{id};
+    </update>
+
+<!--删除订单-->
+    <delete id="delOrder" parameterType="integer" >
+        delete from `order` where OrderID=#{id};
+    </delete>
 
 </mapper>

@@ -8,4 +8,10 @@ public interface AdministratorService {
     JsonData GetComment();
 
     int CheckComment(Map<String,String> info);
+
+
+
+    JsonData getPracticalUser();
+
+    int CheckPracticalUser(Map<String,String> info);
 }

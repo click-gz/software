@@ -15,16 +15,44 @@ import java.util.Map;
 @RequestMapping("/api/v1/pri/Order")
 public class OrderController {
     @Autowired
-    OrderService Oservice;
+    OrderService orderservice;
 
     @PostMapping("save")
     public JsonData OrderSave(@RequestBody Map<String,String> info){
 
-        return Oservice.save(info);
+        return orderservice.save(info);
     }
 
     @PostMapping("OgetOrder")
     public JsonData OgetOrder(@RequestBody Map<String,Integer> info){
-        return Oservice.OgetOrder(info);
+        return orderservice.OgetOrder(info);
     }
+
+    @PostMapping("OgetOrder_Plus")
+    public JsonData OgetOrder_Plus(@RequestBody Map<String , String> info){
+        return orderservice.OgetOrder_Plus(info);
+    }
+    
+    @PostMapping("PgetOrder")
+    public JsonData PgetOrder(@RequestBody Map<String,Integer> info){
+        return orderservice.PgetOrder(info);
+    }
+
+    @PostMapping("PgetOrder_Plus")
+    public JsonData PgetOrder_Plus(@RequestBody Map<String,Integer> info){
+        return orderservice.PgetOrder_Plus(info);
+    }
+
+    @PostMapping("check_order")
+    public JsonData checkOrder(@RequestBody Map<String , Integer>info){
+        return orderservice.checkOrder(info);
+    }
+
+    @RequestMapping("DelOrder")
+    public JsonData DelOrder(@RequestBody Map<String,Integer>info){
+        return orderservice.DelOrder(info);
+    }
+
+
+
 }

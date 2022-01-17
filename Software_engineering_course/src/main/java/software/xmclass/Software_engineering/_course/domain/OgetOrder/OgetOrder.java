@@ -8,6 +8,15 @@ public class OgetOrder {
     private String Name;
     private Date OTime;
     private int OrderState;
+    private int PayState;
+
+    public int getPayState() {
+        return PayState;
+    }
+
+    public void setPayState(int payState) {
+        PayState = payState;
+    }
 
     public int getOrderId() {
         return OrderId;
@@ -57,6 +66,7 @@ public class OgetOrder {
                 ", Name='" + Name + '\'' +
                 ", OTime=" + OTime +
                 ", OrderState=" + OrderState +
+                ", PayState=" + PayState +
                 '}';
     }
 }

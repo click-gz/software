@@ -34,4 +34,23 @@ public class AdministratorController {
             return JsonData.buildSuccess();
         }
     }
+
+    //PU获取操作
+    @PostMapping("GetPracticalUser")
+    public JsonData CheckPracticalUser(){
+        return adminservice.getPracticalUser();
+    }
+
+    //PU审核操作
+    @PostMapping("CheckPracticalUser")
+    public JsonData CheckPracticalUser(@RequestBody Map<String,String> info){
+        int res = adminservice.CheckPracticalUser(info);
+        if(res == -1){
+            return JsonData.buildError(403,"lose Information");
+        }else if (res == 0){
+            return JsonData.buildError(403,"Missing Comment");
+        }else{
+            return JsonData.buildSuccess();
+        }
+    }
 }

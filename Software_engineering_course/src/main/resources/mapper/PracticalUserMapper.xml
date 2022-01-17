@@ -10,6 +10,15 @@
         select  UserName from practicaluser where PracticalUserID = #{PracticalUserID}
     </select>
 
+    <!--获取未审核-->
+    <select id="GetUPracticalUser" resultType="PracticalUserModel">
+        select  * from practicaluser where InfoState = #{state}
+    </select>
+<!--审核-->
+    <update id="CheckPracticalUser" parameterType="int" >
+        update practicaluser set InfoState=#{state} where PracticalUserID=#{id};
+    </update>
+
 
 
 </mapper>

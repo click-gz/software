@@ -23,5 +23,10 @@
         select  * from usermodel where Uid = #{Uid}
     </select>
 
+    <!--根据手ID获取姓名-->
+    <select id="getName" resultType="String">
+        select `Name` from usermodel where Uid = #{Uid}
+    </select>
+
 
 </mapper>

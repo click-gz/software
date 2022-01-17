@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import software.xmclass.Software_engineering._course.domain.OgetOrder.OgetOrder;
 import software.xmclass.Software_engineering._course.domain.OrderModel;
+import software.xmclass.Software_engineering._course.domain.PgetOrder.PgetOrder;
 
 import java.util.Date;
 import java.util.List;
@@ -12,5 +13,12 @@ import java.util.List;
 public interface OrderMapper {
     int save(OrderModel ordermodel);
 
-    List<OgetOrder> OgetbyId(@Param("id") int id);
+    List<OgetOrder> OList(@Param("id") int id);
+    OrderModel getOrder(@Param("id") int id);
+
+    List<PgetOrder> PList(@Param("id") Integer PracticalUserID);
+
+    void changeOrderState(@Param("id")Integer orderID,@Param("State") Integer state);
+
+    void delOrder(@Param("id") Integer orderID);
 }
