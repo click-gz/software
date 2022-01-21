@@ -49,6 +49,8 @@ public class UserServiceImpl implements UserService {
         if (PerInfo.getToken()==null) {
             return JsonData.buildError(500,"error JWT");//500 服务器出错
         } else {
+            PerInfo.setPhone("***********");
+            PerInfo.setPwd("******");
             return JsonData.buildSuccess(200,PerInfo);
         }
     }

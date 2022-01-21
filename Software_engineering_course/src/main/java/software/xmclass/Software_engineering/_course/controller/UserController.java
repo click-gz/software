@@ -32,8 +32,13 @@ public class UserController {
         }
         else if(res == 0){
             return JsonData.buildError(500, "error Mybatis");
+        }else{
+            loginPwd info= new loginPwd();
+            info.setPhone(userinfo.get("phone"));
+            info.setPwd(userinfo.get("pwd"));
+            return userservice.loginpwd(info);
         }
-        return JsonData.buildSuccess(200,123);
+
     }
 
     //登录

@@ -19,6 +19,11 @@
         update practicaluser set InfoState=#{state} where PracticalUserID=#{id};
     </update>
 
+    <!--获取已审核-->
+    <select id="getList" resultType="PracticalUserSingle">
+        select   PracticalUserID, UserName, OridinaryUserID, Summary from practicaluser where InfoState = #{state}
+    </select>
+
 
 
 </mapper>
