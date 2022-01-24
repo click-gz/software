@@ -13,4 +13,6 @@ public interface UserMapper {
 
 
     String getName(@Param("Uid") int ordinaryUserID);
+
+
 }

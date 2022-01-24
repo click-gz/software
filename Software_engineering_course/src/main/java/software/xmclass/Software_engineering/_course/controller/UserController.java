@@ -82,4 +82,12 @@ public class UserController {
         }
 
     }
+
+    @PostMapping("checkToken")
+    public JsonData checkToken(@RequestBody Map<String, String>info){
+        return userservice.checkToken(info);
+    }
+
+
+
 }

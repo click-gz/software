@@ -12,4 +12,7 @@ public interface UserService {
     usermodel findByPhoneAndPwd(String phone, String pwd);
     usermodel findByPhone(String phone);
     JsonData loginCode(Map<String,String> info);
+
+
+    JsonData checkToken(Map<String,String> info);
 }

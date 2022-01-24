@@ -92,6 +92,18 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public JsonData checkToken(Map<String, String> info) {
+        String token = info.get("token");
+        Claims claims = JWTUtils.checkJWT(token);
+        if (claims == null) {
+            //不放行，则需要给前端数据，这里封装一个方法传送错误信息
+            return   JsonData.buildError(401,"验证码过期,重新获取");
+        }else{
+            return JsonData.buildSuccess();
+        }
+    }
+
     public usermodel parseToUser(Map<String,String> info){
         if(info.containsKey("phone") && info.containsKey("pwd")){
             usermodel user=new usermodel();
